@@ -48,3 +48,33 @@ vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
 
 --require'lspconfig'.pyright.setup{}
 
+
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+require("lspconfig").clangd.setup({ capabilities = capabilities })
+require("mason-null-ls").setup({
+    ensure_installed = {
+'diagnostic-languageserver',
+'alex',
+'actionlint',
+'autopep10',
+'clangd',
+'commitlint',
+'debugpy',
+'fixjson',
+'gitleaks',
+'isort',
+'lua-language-server',
+'prettier',
+'pyflakes',
+'python-lsp-server',
+'taplo',
+'typos',
+'yaml-language-server',
+'yamlfix',
+    },
+    automatic_installation = false,
+    handlers = {},
+})
+

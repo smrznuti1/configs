@@ -52,4 +52,5 @@ return {
   { "windwp/nvim-autopairs", commit = "f6c71641f6f183427a651c0ce4ba3fb89404fa9e", optional = true },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "windwp/nvim-ts-autotag", commit = "6be1192965df35f94b8ea6d323354f7dc7a557e4", optional = true },
+  { "WhoIsSethDaniel/mason-tool-installer.nvim", name="mason-tool-installer" },
 }
