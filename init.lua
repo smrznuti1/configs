@@ -58,7 +58,6 @@ require("mason-null-ls").setup({
   'lua-language-server',
   'texlab',
   'latexindent',
-  'tectonic',
   'actionlint',
   'alex',
   'clangd',
