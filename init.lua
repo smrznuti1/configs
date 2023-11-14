@@ -56,7 +56,7 @@ require("lspconfig").clangd.setup({ capabilities = capabilities })
 require("mason-null-ls").setup({
     ensure_installed = {
   'lua-language-server',
-  'ltex-ls',
+  'texlab',
   'latexindent',
   'tectonic',
   'actionlint',
