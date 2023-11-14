@@ -59,6 +59,7 @@ require("mason-null-ls").setup({
   'texlab',
   'latexindent',
   'actionlint',
+  'bibtex-tidy ',
   'alex',
   'clangd',
   'commitlint',
