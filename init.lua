@@ -24,25 +24,25 @@ require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, f
 
 vim.cmd.colorscheme "catppuccin-frappe"
 
---vim.opt.shell = 'powershell.exe'
---vim.opt.shellcmdflag = '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
---vim.opt.shellxquote = ''
---vim.opt.shellquote = ''
---vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
---vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s'
+vim.opt.shell = 'powershell.exe'
+vim.opt.shellcmdflag = '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
+vim.opt.shellxquote = ''
+vim.opt.shellquote = ''
+vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
+vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s'
 
 --vim.opt.shell = 'wsl.exe'
 --vim.opt.shellcmdflag = 'ubuntu.exe run '
 --vim.opt.shellxquote = ''
 --vim.opt.shellquote = ''
 
---vim.api.nvim_create_user_command("Pterm", 'term powershell.exe', {})
---vim.api.nvim_create_user_command("PT", 'term powershell.exe', {})
---vim.api.nvim_create_user_command("Uterm", 'term wsl.exe', {})
---vim.api.nvim_create_user_command("UT", 'term wsl.exe', {})
+vim.api.nvim_create_user_command("Pterm", 'term powershell.exe', {})
+vim.api.nvim_create_user_command("PT", 'term powershell.exe', {})
+vim.api.nvim_create_user_command("Uterm", 'term wsl.exe', {})
+vim.api.nvim_create_user_command("UT", 'term wsl.exe', {})
 vim.api.nvim_create_user_command("BDAll", '%bd! | e#', {})
 vim.api.nvim_create_user_command("NT", 'bd! % | term', {})
---vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
+vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
 
 
 
@@ -64,7 +64,6 @@ require("mason-null-ls").setup({
   'clangd',
   'commitlint',
   'debugpy',
-  'diagnostic-languageserver',
   'docker-compose-language-service',
   'dockerfile-language-server',
   'fixjson',
