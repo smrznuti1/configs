@@ -76,6 +76,8 @@ require("mason-null-ls").setup({
   'typos',
   'yaml-language-server',
   'yamlfix',
+  'cmakelang',
+  'cmake-language-server',
     },
     automatic_installation = false,
     handlers = {},
