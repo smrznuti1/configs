@@ -82,6 +82,8 @@ require("mason-null-ls").setup({
   'powershell-editor-services',
   'shellcheck',
   'beautysh',
+  'ansible-lint',
+  'ansible-language-server',
     },
     automatic_installation = false,
     handlers = {},
