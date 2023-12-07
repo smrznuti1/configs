@@ -22,27 +22,25 @@ end
 
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
 
-vim.cmd.colorscheme "catppuccin-frappe"
-
--- vim.opt.shell = 'powershell.exe'
--- vim.opt.shellcmdflag = '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
--- vim.opt.shellxquote = ''
--- vim.opt.shellquote = ''
--- vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
--- vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s'
+vim.opt.shell = 'powershell.exe'
+vim.opt.shellcmdflag = '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
+vim.opt.shellxquote = ''
+vim.opt.shellquote = ''
+vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
+vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s'
 
 --vim.opt.shell = 'wsl.exe'
 --vim.opt.shellcmdflag = 'ubuntu.exe run '
 --vim.opt.shellxquote = ''
 --vim.opt.shellquote = ''
 
--- vim.api.nvim_create_user_command("Pterm", 'term powershell.exe', {})
--- vim.api.nvim_create_user_command("PT", 'term powershell.exe', {})
--- vim.api.nvim_create_user_command("Uterm", 'term wsl.exe', {})
--- vim.api.nvim_create_user_command("UT", 'term wsl.exe', {})
+vim.api.nvim_create_user_command("Pterm", 'term powershell.exe', {})
+vim.api.nvim_create_user_command("PT", 'term powershell.exe', {})
+vim.api.nvim_create_user_command("Uterm", 'term wsl.exe', {})
+vim.api.nvim_create_user_command("UT", 'term wsl.exe', {})
 vim.api.nvim_create_user_command("BDAll", '%bd! | e#', {})
 vim.api.nvim_create_user_command("NT", 'bd! % | term', {})
--- vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
+vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
 
 
 
@@ -89,4 +87,22 @@ require("mason-null-ls").setup({
     handlers = {},
 })
 
+vim.opt.wrap = true
 
+--vim.cmd.colorscheme "catppuccin"
+
+require("transparent").setup({ -- Optional, you don't have to run setup.
+  groups = { -- table: default groups
+    'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+    'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+    'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+    'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
+    'EndOfBuffer',
+  },
+  extra_groups = {}, -- table: additional groups that should be cleared
+  exclude_groups = {}, -- table: groups you don't want to clear
+})
+
+require("notify").setup({
+  background_colour = "#000000",
+})
