@@ -8,5 +8,13 @@ return {
   --   config = function()
   --     require("lsp_signature").setup()
   --   end,
-  -- },
+ {
+    'chipsenkbeil/distant.nvim', 
+    branch = 'v0.3',
+    config = function()
+        require('distant'):setup()
+    end
+} 
+
+   -- },
 }

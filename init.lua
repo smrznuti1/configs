@@ -106,3 +106,10 @@ require("transparent").setup({ -- Optional, you don't have to run setup.
 require("notify").setup({
   background_colour = "#000000",
 })
+
+require("distant"):setup()
+
+
+vim.api.nvim_create_user_command("TT", 'TransparentToggle', {})
+
+
