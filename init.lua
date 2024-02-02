@@ -22,20 +22,27 @@ end
 
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
 
-vim.opt.shell = 'powershell.exe'
-vim.opt.shellcmdflag = '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
-vim.opt.shellxquote = ''
-vim.opt.shellquote = ''
-vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
-vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s'
+vim.opt.shell = "pwsh"
+vim.opt.shellcmdflag =
+  "-NoProfile -NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues['Out-File:Encoding']='utf8';$PSStyle.OutputRendering = [System.Management.Automation.OutputRendering]::PlainText;"
+vim.opt.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+vim.opt.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""
+-- vim.opt.shell = 'pwsh'
+-- vim.opt.shellcmdflag = '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
+-- vim.opt.shellxquote = ''
+-- vim.opt.shellquote = ''
+-- vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
+-- vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s'
 
 --vim.opt.shell = 'wsl.exe'
 --vim.opt.shellcmdflag = 'ubuntu.exe run '
 --vim.opt.shellxquote = ''
 --vim.opt.shellquote = ''
 
-vim.api.nvim_create_user_command("Pterm", 'term powershell.exe', {})
-vim.api.nvim_create_user_command("PT", 'term powershell.exe', {})
+vim.api.nvim_create_user_command("Pterm", 'term pwsh', {})
+vim.api.nvim_create_user_command("PT", 'term pwsh', {})
 vim.api.nvim_create_user_command("Uterm", 'term wsl.exe', {})
 vim.api.nvim_create_user_command("UT", 'term wsl.exe', {})
 vim.api.nvim_create_user_command("BDAll", '%bd! | e#', {})
@@ -44,7 +51,7 @@ vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
 
 
 
---require'lspconfig'.pyright.setup{}
+require'lspconfig'.pylsp.setup{}
 
 
 
@@ -69,7 +76,7 @@ require("mason-null-ls").setup({
   'isort',
   'prettier',
   'pyflakes',
-  'python-lsp-server',
+  -- 'python-lsp-server',
   'taplo',
   'typos',
   'yaml-language-server',
@@ -111,5 +118,4 @@ require("distant"):setup()
 
 
 vim.api.nvim_create_user_command("TT", 'TransparentToggle', {})
-
 

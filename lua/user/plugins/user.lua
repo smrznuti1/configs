@@ -14,7 +14,7 @@ return {
     config = function()
         require('distant'):setup()
     end
-} 
+},
 
    -- },
 }
