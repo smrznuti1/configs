@@ -31,6 +31,9 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     ["<leader>b;"] = { ':let @+ = expand("%:p")<cr>', desc="Copy Name"},
+    ["<leader>t;"] = { ':cd %:p:h<cr>', desc="Change Directory to file path"},
+    ["<leader>tr"] = { ':cd <C-r>*<cr>', desc="Change Directory to file path"},
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
