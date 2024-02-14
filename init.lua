@@ -51,7 +51,7 @@ vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
 
 
 
-require'lspconfig'.pylsp.setup{}
+-- require'lspconfig'.pylsp.setup{}
 
 
 
@@ -119,3 +119,5 @@ require("distant"):setup()
 
 vim.api.nvim_create_user_command("TT", 'TransparentToggle', {})
 
+require'lspconfig'.pyright.setup{}
+require("netman")
