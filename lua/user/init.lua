@@ -64,6 +64,15 @@ return {
       },
     },
   },
+-- {
+--   "iamcco/markdown-preview.nvim",
+--   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+--   build = "cd app && yarn install",
+--   init = function()
+--     vim.g.mkdp_filetypes = { "markdown" }
+--   end,
+--   ft = { "markdown" },
+-- },
 
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
