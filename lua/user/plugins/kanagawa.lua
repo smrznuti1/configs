@@ -1,0 +1,29 @@
+return {
+{
+  "Shatur/neovim-ayu",
+  lazy=false,
+  priority=1000
+},
+{
+  "olivercederborg/poimandres.nvim",
+  lazy=false,
+  priority=1000
+
+},
+{
+"ray-x/aurora",
+  lazy=false,
+  priority=1000
+  }
+,
+{
+  "thepogsupreme/mountain.nvim",
+  lazy=false,
+  priority=1000
+  },
+  {
+  "RaphaeleL/my_vivid",
+  lazy=false,
+  priority=1000
+  }
+}
