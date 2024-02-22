@@ -34,6 +34,7 @@ return {
     ["<leader>t;"] = { ':cd %:p:h<cr>', desc="Change Directory to file path"},
     ["<leader>tr"] = { ':cd <C-r>+<cr>', desc="Change Directory to file path"},
 
+    ["<leader>be"] = { ':tabe %<cr>', desc="Open in New Tab"},
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },

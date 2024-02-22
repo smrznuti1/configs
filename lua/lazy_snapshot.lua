@@ -55,4 +55,5 @@ return {
   { "WhoIsSethDaniel/mason-tool-installer.nvim", name="mason-tool-installer" },
   { "xiyaowong/transparent.nvim", name="transparent", lazy=false },
   { "miversen33/netman.nvim", name="netman", lazy=false },
+  {"sainnhe/sonokai", lazy = false, priority=1000}
 }
