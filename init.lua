@@ -51,7 +51,6 @@ vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
 
 
 
--- require'lspconfig'.pylsp.setup{}
 
 
 
@@ -119,5 +118,13 @@ require("distant"):setup()
 
 vim.api.nvim_create_user_command("TT", 'TransparentToggle', {})
 
-require'lspconfig'.pyright.setup{}
+-- require'lspconfig'.pyright.setup{
+-- analysis = {
+--           autoSearchPaths = true,
+--           useLibraryCodeForTypes = true,
+--           diagnosticMode = 'openFilesOnly',
+--         },
+-- }
 require("netman")
+
+require('test-plug')
