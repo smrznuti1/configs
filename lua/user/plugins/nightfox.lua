@@ -1,6 +1,7 @@
 return {
   "EdenEast/nightfox.nvim",
   name = "nightfox",
-  style = "duskfox"
-
+  style = "duskfox",
+  lazy = false,
+  transparent = true,
 }
