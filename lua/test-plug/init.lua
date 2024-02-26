@@ -1,4 +1,5 @@
 lspconfig = require("lspconfig")
+local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 lspconfig.pylsp.setup {
 on_attach = custom_attach,
 settings = {
@@ -11,7 +12,8 @@ settings = {
         -- linter options
         pylint = { enabled = false, executable = "pylint" },
         pyflakes = { enabled = false },
-        pycodestyle = { enabled = true },
+        pycodestyle = { enabled = true, 
+                maxLineLength = 200 },
         -- type checker
         pylsp_mypy = { enabled = true,
         live_mode = true },
@@ -28,20 +30,5 @@ settings = {
 flags = {
     debounce_text_changes = 200,
 },
-capabilities = capabilities,
+capabilities = lsp_capabilities,
 }
-
-
-
-
-
--- lspconfig.pyright.setup{
--- on_attach = custom_attach,
---   settings = {
---     pyright = {
---       analysis = {
---         autoImportCompletions = true,
---       }
---     }
---   }
--- }
