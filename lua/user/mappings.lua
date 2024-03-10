@@ -30,13 +30,14 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    ["<leader>b;"] = { ':let @+ = expand("%:p")<cr>', desc="Copy Name"},
-    ["<leader>t;"] = { ':cd %:p:h<cr>', desc="Change Directory to file path"},
-    ["<leader>tr"] = { ':cd <C-r>+<cr>', desc="Change Directory to file path"},
+    ["<leader>b;"] = { ':let @+ = expand("%:p")<cr>', desc = "Copy Name" },
+    ["<leader>t;"] = { ":cd %:p:h<cr>", desc = "Change Directory to file path" },
+    ["<leader>tr"] = { ":cd <C-r>+<cr>", desc = "Change Directory to file path" },
 
-    ["<leader>be"] = { ':tabe %<cr>', desc="Open in New Tab"},
-    ["<leader>-"] = { ':cd -<cr>:pwd<cr>', desc="Cd -"},
-    ["<leader>Q"] = { ':bd! %<cr>', desc="Quit buffer" }
+    ["<leader>be"] = { ":tabe %<cr>", desc = "Open in New Tab" },
+    ["<leader>-"] = { ":cd -<cr>:pwd<cr>", desc = "Cd -" },
+    ["<leader>Q"] = { ":bd! %<cr>", desc = "Quit buffer" },
+    ["<leader>L"] = { ":!ls<cr>", desc = "List Items" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
