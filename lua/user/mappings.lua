@@ -38,6 +38,8 @@ return {
     ["<leader>-"] = { ":cd -<cr>:pwd<cr>", desc = "Cd -" },
     ["<leader>Q"] = { ":bd! %<cr>", desc = "Quit buffer" },
     ["<leader>L"] = { ":!ls<cr>", desc = "List Items" },
+    ["<leader>D"] = { ":!ri -Force %<cr>", desc = "Delete Item" },
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
