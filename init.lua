@@ -41,82 +41,96 @@ vim.opt.shellxquote = ""
 --vim.opt.shellxquote = ''
 --vim.opt.shellquote = ''
 
-vim.api.nvim_create_user_command("Pterm", 'term pwsh', {})
-vim.api.nvim_create_user_command("PT", 'term pwsh', {})
-vim.api.nvim_create_user_command("Uterm", 'term wsl.exe', {})
-vim.api.nvim_create_user_command("UT", 'term wsl.exe', {})
-vim.api.nvim_create_user_command("BDAll", '%bd! | e#', {})
-vim.api.nvim_create_user_command("NT", 'bd! % | term', {})
-vim.api.nvim_create_user_command("NUT", 'bd! % | Uterm', {})
-
-
-
-
-
+vim.api.nvim_create_user_command("Pterm", "term pwsh", {})
+vim.api.nvim_create_user_command("PT", "term pwsh", {})
+vim.api.nvim_create_user_command("Uterm", "term wsl.exe", {})
+vim.api.nvim_create_user_command("UT", "term wsl.exe", {})
+vim.api.nvim_create_user_command("BDAll", "%bd! | e#", {})
+vim.api.nvim_create_user_command("NT", "bd! % | term", {})
+vim.api.nvim_create_user_command("NUT", "bd! % | Uterm", {})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
-require("lspconfig").clangd.setup({ capabilities = capabilities })
-require("mason-null-ls").setup({
-    ensure_installed = {
-  'lua-language-server',
-  'texlab',
-  'latexindent',
-  'actionlint',
-  'bibtex-tidy ',
-  'alex',
-  'clangd',
-  'commitlint',
-  'debugpy',
-  'docker-compose-language-service',
-  'dockerfile-language-server',
-  'fixjson',
-  'gitleaks',
-  'isort',
-  'prettier',
-  'pyflakes',
-  -- 'python-lsp-server',
-  'taplo',
-  'typos',
-  'yaml-language-server',
-  'yamlfix',
-  'cmakelang',
-  'cmake-language-server',
-  'bash-language-server ',
-  'powershell-editor-services',
-  'shellcheck',
-  'beautysh',
-  'ansible-lint',
-  'ansible-language-server',
-    },
-    automatic_installation = false,
-    handlers = {},
-})
+-- require("lspconfig").clangd.setup { capabilities = capabilities }
+require("mason-null-ls").setup {
+  ensure_installed = {
+    "lua-language-server",
+    "texlab",
+    "latexindent",
+    "actionlint",
+    "bibtex-tidy ",
+    "alex",
+    -- "clangd",
+    "commitlint",
+    "debugpy",
+    "docker-compose-language-service",
+    "dockerfile-language-server",
+    "fixjson",
+    "gitleaks",
+    "isort",
+    "prettier",
+    "pyflakes",
+    -- 'python-lsp-server',
+    "taplo",
+    "typos",
+    "yaml-language-server",
+    "yamlfix",
+    "cmakelang",
+    "cmake-language-server",
+    "bash-language-server ",
+    "powershell-editor-services",
+    "shellcheck",
+    "beautysh",
+    "ansible-lint",
+    "ansible-language-server",
+  },
+  automatic_installation = false,
+  handlers = {},
+}
 
 vim.opt.wrap = true
 
 --vim.cmd.colorscheme "catppuccin"
 
-require("transparent").setup({ -- Optional, you don't have to run setup.
+require("transparent").setup { -- Optional, you don't have to run setup.
   groups = { -- table: default groups
-    'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
-    'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
-    'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
-    'SignColumn', 'CursorLine', 'CursorLineNr', 'StatusLine', 'StatusLineNC',
-    'EndOfBuffer',
+    "Normal",
+    "NormalNC",
+    "Comment",
+    "Constant",
+    "Special",
+    "Identifier",
+    "Statement",
+    "PreProc",
+    "Type",
+    "Underlined",
+    "Todo",
+    "String",
+    "Function",
+    "Conditional",
+    "Repeat",
+    "Operator",
+    "Structure",
+    "LineNr",
+    "NonText",
+    "SignColumn",
+    "CursorLine",
+    "CursorLineNr",
+    "StatusLine",
+    "StatusLineNC",
+    "EndOfBuffer",
   },
   extra_groups = {}, -- table: additional groups that should be cleared
   exclude_groups = {}, -- table: groups you don't want to clear
-})
+}
 
-require("notify").setup({
+require("notify").setup {
   background_colour = "#000000",
-})
+}
 
 require("distant"):setup()
 
-
-vim.api.nvim_create_user_command("TT", 'TransparentToggle', {})
+vim.api.nvim_create_user_command("TT", "TransparentToggle", {})
 
 -- require'lspconfig'.pyright.setup{
 -- analysis = {
@@ -125,6 +139,6 @@ vim.api.nvim_create_user_command("TT", 'TransparentToggle', {})
 --           diagnosticMode = 'openFilesOnly',
 --         },
 -- }
-require("netman")
-
-require('test-plug')
+require "netman"
+-- require "clangd"
+require "test-plug"
