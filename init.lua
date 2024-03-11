@@ -29,17 +29,6 @@ vim.opt.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
 vim.opt.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
--- vim.opt.shell = 'pwsh'
--- vim.opt.shellcmdflag = '-NonInteractive -NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command '
--- vim.opt.shellxquote = ''
--- vim.opt.shellquote = ''
--- vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
--- vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s'
-
---vim.opt.shell = 'wsl.exe'
---vim.opt.shellcmdflag = 'ubuntu.exe run '
---vim.opt.shellxquote = ''
---vim.opt.shellquote = ''
 
 vim.api.nvim_create_user_command("Pterm", "term pwsh", {})
 vim.api.nvim_create_user_command("PT", "term pwsh", {})
@@ -49,9 +38,6 @@ vim.api.nvim_create_user_command("BDAll", "%bd! | e#", {})
 vim.api.nvim_create_user_command("NT", "bd! % | term", {})
 vim.api.nvim_create_user_command("NUT", "bd! % | Uterm", {})
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.offsetEncoding = { "utf-16" }
--- require("lspconfig").clangd.setup { capabilities = capabilities }
 require("mason-null-ls").setup {
   ensure_installed = {
     "lua-language-server",
@@ -60,7 +46,6 @@ require("mason-null-ls").setup {
     "actionlint",
     "bibtex-tidy ",
     "alex",
-    -- "clangd",
     "commitlint",
     "debugpy",
     "docker-compose-language-service",
@@ -70,7 +55,6 @@ require("mason-null-ls").setup {
     "isort",
     "prettier",
     "pyflakes",
-    -- 'python-lsp-server',
     "taplo",
     "typos",
     "yaml-language-server",
@@ -90,8 +74,6 @@ require("mason-null-ls").setup {
 
 vim.opt.wrap = true
 
---vim.cmd.colorscheme "catppuccin"
-
 require("notify").setup {
   background_colour = "#000000",
 }
@@ -100,12 +82,5 @@ require("distant"):setup()
 
 vim.api.nvim_create_user_command("TT", "TransparentToggle", {})
 
--- require'lspconfig'.pyright.setup{
--- analysis = {
---           autoSearchPaths = true,
---           useLibraryCodeForTypes = true,
---           diagnosticMode = 'openFilesOnly',
---         },
--- }
 require "netman"
 require "test-plug"
