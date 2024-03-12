@@ -1,9 +1,6 @@
-return {
-  "neovim/nvim-lspconfig",
-  event = "BufReadPre",
-  dependencies = { "hrsh7th/cmp-nvim-lsp" }, -- if you use nvim-cmp
-  config = function()
-    require("lspconfig").clangd.setup {
+lspconfig = require("lspconfig")
+default_capabilities = require("cmp_nvim_lsp").default_capabilities()
+lspconfig.clangd.setup{
       cmd = {
         "clangd",
         "--background-index",
@@ -13,6 +10,4 @@ return {
         "--function-arg-placeholders",
         "--fallback-style=llvm",
       },
-    }
-  end,
 }

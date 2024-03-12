@@ -83,4 +83,5 @@ require("distant"):setup()
 vim.api.nvim_create_user_command("TT", "TransparentToggle", {})
 
 require "netman"
-require "test-plug"
+require "lspconfigs/clangd"
+require "lspconfigs/pylsp"
