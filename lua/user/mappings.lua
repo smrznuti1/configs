@@ -39,6 +39,9 @@ return {
     ["<leader>Q"] = { ":bd! %<cr>", desc = "Quit buffer" },
     ["<leader>L"] = { ":!ls<cr>", desc = "List Items" },
     ["<leader>D"] = { ":!ri -Force %<cr>", desc = "Delete Item" },
+    ["gd"] = { ":lua vim.lsp.buf.definition()<cr>", desc = "Goto Definition" },
+    ["gv"] = { ":vs | lua vim.lsp.buf.definition()<cr>", desc = "Goto Definition split vertical" },
+    ["gs"] = { ":sp | lua vim.lsp.buf.definition()<cr>", desc = "Goto Definition split horizontal" },
 
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command

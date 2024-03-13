@@ -59,7 +59,8 @@ M.setup_diagnostics = function(signs)
   vim.diagnostic.config(M.diagnostics[vim.g.diagnostics_mode])
 end
 
-M.formatting = user_opts("lsp.formatting", { format_on_save = { enabled = true }, disabled = {}, timeouts = { timeout_ms = 5000} })
+M.formatting =
+  user_opts("lsp.formatting", { format_on_save = { enabled = true }, disabled = {}, timeouts = { timeout_ms = 5000 } })
 if type(M.formatting.format_on_save) == "boolean" then
   M.formatting.format_on_save = { enabled = M.formatting.format_on_save }
 end
@@ -186,12 +187,12 @@ M.on_attach = function(client, bufnr)
     }
   end
 
-  if client.supports_method "textDocument/definition" then
-    lsp_mappings.n["gd"] = {
-      function() vim.lsp.buf.definition() end,
-      desc = "Show the definition of current symbol",
-    }
-  end
+  -- if client.supports_method "textDocument/definition" then
+  --   lsp_mappings.n["gd"] = {
+  --     function() vim.lsp.buf.definition() end,
+  --     desc = "Show the definition of current symbol",
+  --   }
+  -- end
 
   if client.supports_method "textDocument/formatting" and not tbl_contains(M.formatting.disabled, client.name) then
     lsp_mappings.n["<leader>lf"] = {
@@ -338,7 +339,7 @@ M.on_attach = function(client, bufnr)
   end
 
   if is_available "telescope.nvim" then -- setup telescope mappings if available
-    if lsp_mappings.n.gd then lsp_mappings.n.gd[1] = function() require("telescope.builtin").lsp_definitions() end end
+    -- if lsp_mappings.n.gd then lsp_mappings.n.gd[1] = function() require("telescope.builtin").lsp_definitions() end end
     if lsp_mappings.n.gI then
       lsp_mappings.n.gI[1] = function() require("telescope.builtin").lsp_implementations() end
     end
