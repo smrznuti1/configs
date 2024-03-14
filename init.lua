@@ -84,4 +84,25 @@ vim.api.nvim_create_user_command("TT", "TransparentToggle", {})
 
 require "netman"
 require "lspconfigs/clangd"
+-- require "lspconfigs/jedi"
+-- require "lspconfigs/pyright"
 require "lspconfigs/pylsp"
+
+if vim.g.neovide then
+  vim.g.neovide_scale_factor = 1.0
+  vim.o.guifont = "AnonymicePro Nerd Font:h14" -- text below applies for VimScript
+  vim.opt.linespace = 0
+  vim.g.neovide_padding_top = 0
+  vim.g.neovide_padding_bottom = 0
+  vim.g.neovide_padding_right = 0
+  vim.g.neovide_padding_left = 0
+  local alpha = function() return string.format("%x", math.floor(255 * vim.g.transparency or 0.8)) end
+  -- Transparency
+  vim.g.neovide_transparency = 0.8
+  vim.g.transparency = 1.0
+  -- Blur
+  vim.g.neovide_window_blurred = true
+  vim.g.neovide_floating_blur_amount_x = 5.0
+  vim.g.neovide_floating_blur_amount_y = 5.0
+  vim.g.neovide_background_color = "#0f1117" .. alpha()
+end
