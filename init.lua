@@ -45,7 +45,6 @@ require("mason-null-ls").setup {
     "latexindent",
     "actionlint",
     "bibtex-tidy ",
-    "alex",
     "commitlint",
     "debugpy",
     "docker-compose-language-service",
