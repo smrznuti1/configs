@@ -30,7 +30,7 @@ return {
   { "mrjones2014/smart-splits.nvim", version = "^1", optional = true },
   { "williamboman/mason.nvim", version = "^1", optional = true },
   { "williamboman/mason-lspconfig.nvim", version = "^1", optional = true },
-  { "neovim/nvim-lspconfig", commit = "e49b1e90c1781ce372013de3fa93a91ea29fc34a", optional = true },
+  { "neovim/nvim-lspconfig", optional = true, commit = "5b364bd4db0fb68a56ffe427a370920854acb834"},
   { "numToStr/Comment.nvim", version = "^0.8", optional = true },
   { "nvim-lua/plenary.nvim", version = "^0.1", optional = true },
   { "nvim-neo-tree/neo-tree.nvim", version = "^3", optional = true },

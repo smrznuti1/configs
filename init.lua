@@ -55,7 +55,6 @@ require("mason-null-ls").setup {
     "prettier",
     "pyflakes",
     "taplo",
-    "typos",
     "yaml-language-server",
     "yamlfix",
     "cmakelang",
@@ -86,6 +85,7 @@ require "lspconfigs/clangd"
 -- require "lspconfigs/jedi"
 -- require "lspconfigs/pyright"
 require "lspconfigs/pylsp"
+require "lspconfigs/typos-lsp"
 
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 1.0
