@@ -1,4 +1,4 @@
-lspconfig = require "lspconfig"
+local lspconfig = require "lspconfig"
 default_capabilities = require("cmp_nvim_lsp").default_capabilities()
 default_capabilities.offsetEncoding = { "utf-16" }
 lspconfig.clangd.setup {

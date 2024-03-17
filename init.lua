@@ -37,6 +37,7 @@ vim.api.nvim_create_user_command("UT", "term wsl.exe", {})
 vim.api.nvim_create_user_command("BDAll", "%bd! | e#", {})
 vim.api.nvim_create_user_command("NT", "bd! % | term", {})
 vim.api.nvim_create_user_command("NUT", "bd! % | Uterm", {})
+vim.api.nvim_create_user_command("CC", "CopilotChat", {})
 
 require("mason-null-ls").setup {
   ensure_installed = {
