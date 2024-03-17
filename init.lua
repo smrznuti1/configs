@@ -86,6 +86,10 @@ require "lspconfigs/clangd"
 -- require "lspconfigs/pyright"
 require "lspconfigs/pylsp"
 require "lspconfigs/typos-lsp"
+require("CopilotChat").setup {
+  debug = true, -- Enable debugging
+  -- See Configuration section for rest
+}
 
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 1.0
