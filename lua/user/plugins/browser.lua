@@ -4,7 +4,7 @@ return {
   lazy = false,
   config = function()
     local bookmarks = {
-      ["GitHub SE"] = {
+      ["SE GitHub"] = {
         ["Landing Page"] = "https://github.schneider-electric.com/",
         ["Hpc-Firmware"] = "https://github.schneider-electric.com/MSol-NGM-HPC/hpc-firmware",
         ["SEAPyPI"] = "https://github.schneider-electric.com/SEAPyPI",
@@ -20,12 +20,15 @@ return {
         ["Issues Search"] = "https://github.com/search?q=%s&type=issues",
         ["Pulls Search"] = "https://github.com/search?q=%s&type=pullrequests",
       },
-      ["Jira"] = {
-        ["board"] = "https://jira.se.com/secure/RapidBoard.jspa?rapidView=7703&quickFilter=61920#",
-        ["Jira SE"] = "https://jira.se.com/",
+      ["SE"] = {
+        ["Support"] = "https://schneider.service-now.com/supportatschneider?id=se_index",
+        ["Spice"] = "https://spice.se.com/",
+        ["Jira Board"] = "https://jira.se.com/secure/RapidBoard.jspa?rapidView=7703&quickFilter=61920#",
+        ["Jira Landing"] = "https://jira.se.com/",
+        ["TimeSheet"] = "https://se-ppm.sciforma.net/sciforma/?ACSREQUESTID=_f2b21659-6f25-470d-bab7-dbf9e5dbac64#2766",
       },
-      ["TimeSheet"] = "https://se-ppm.sciforma.net/sciforma/?ACSREQUESTID=_f2b21659-6f25-470d-bab7-dbf9e5dbac64#2766",
       ["AvistoConnector"] = "https://vpn.elsys-eastern.com:1443/remote/login?lang=en",
+      ["Ziteboard"] = "https://app.ziteboard.com",
     }
     local browse = require "browse"
 

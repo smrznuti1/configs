@@ -93,6 +93,11 @@ require("CopilotChat").setup {
   -- See Configuration section for rest
 }
 
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "copilot-*",
+  callback = function() vim.opt_local.relativenumber = true end,
+})
+
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 1.0
   vim.o.guifont = "AnonymicePro Nerd Font:h14" -- text below applies for VimScript

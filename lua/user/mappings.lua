@@ -31,11 +31,11 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     ["<leader>b;"] = { ':let @+ = expand("%:p")<cr>', desc = "Copy Name" },
-    ["<leader>t;"] = { ":cd %:p:h<cr>", desc = "Change Directory to file path" },
-    ["<leader>tr"] = { ":cd <C-r>+<cr>", desc = "Change Directory to file path" },
+    ["<leader>t;"] = { ":tc %:p:h<cr>", desc = "Change Directory to file path" },
+    ["<leader>tr"] = { ":tc <C-r>+<cr>", desc = "Change Directory to file path" },
 
     ["<leader>be"] = { ":tabe %<cr>", desc = "Open in New Tab" },
-    ["<leader>-"] = { ":cd -<cr>:pwd<cr>", desc = "Cd -" },
+    ["<leader>-"] = { ":tc -<cr>:pwd<cr>", desc = "Cd -" },
     ["<leader>Q"] = { ":bd! %<cr>", desc = "Quit buffer" },
     ["<leader>L"] = { ":!ls<cr>", desc = "List Items" },
     ["<leader>D"] = { ":!ri -Force %<cr>", desc = "Delete Item" },
