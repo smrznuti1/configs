@@ -35,6 +35,7 @@ return {
     ["<leader>tr"] = { ":tc <C-r>+<cr>", desc = "Change Directory to file path" },
 
     ["<leader>be"] = { ":tabe %<cr>", desc = "Open in New Tab" },
+    ["<leader>td"] = { '<cmd>TermExec cmd="ddgr"<cr>', desc = "DuckDuckGo Browse" },
     ["<leader>-"] = { ":tc -<cr>:pwd<cr>", desc = "Cd -" },
     ["<leader>Q"] = { ":bd! %<cr>", desc = "Quit buffer" },
     ["<leader>L"] = { ":!ls<cr>", desc = "List Items" },
