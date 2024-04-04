@@ -1,0 +1,265 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">PowerShellAIAssistant</S>
+      <Version N="Version">0.2.1</Version>
+      <S N="Type">Module</S>
+      <S N="Description">PowerShellAIAssistant integrates OpenAI's AI Assistants into PowerShell, leveraging advanced AI capabilities in your PowerShell scripts for dynamic, intelligent automation and data processing</S>
+      <S N="Author">Douglas Finke</S>
+      <S N="CompanyName">DougFinke</S>
+      <S N="Copyright">c 2024 All rights reserved.</S>
+      <DT N="PublishedDate">2024-03-19T12:22:55+01:00</DT>
+      <Obj N="InstalledDate" RefId="1">
+        <DT>2024-03-19T19:44:06.6025174+01:00</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="2">
+            <TN RefId="1">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <URI N="LicenseUri">https://github.com/dfinke/PowerShellAIAssistant/blob/main/LICENSE</URI>
+      <URI N="ProjectUri">https://github.com/dfinke/PowerShellAIAssistant</URI>
+      <Nil N="IconUri" />
+      <Obj N="Tags" RefId="3">
+        <TN RefId="2">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>PowerShell</S>
+          <S>GPT</S>
+          <S>OpenAI</S>
+          <S>Assistant</S>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="4">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Obj N="Value" RefId="5">
+              <TNRef RefId="2" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Obj N="Value" RefId="6">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Add-OAIToolsToList</S>
+                <S>Get-MultiPartFormData</S>
+                <S>Invoke-OAIBeta</S>
+                <S>Clear-OAIAllItems</S>
+                <S>Clear-OAIAssistants</S>
+                <S>Clear-OAIFiles</S>
+                <S>ConvertFrom-FunctionDefinition</S>
+                <S>ConvertFrom-OAIAssistant</S>
+                <S>ConvertTo-OpenAIFunctionSpec</S>
+                <S>ConvertTo-OpenAIFunctionSpecDataType</S>
+                <S>Copy-OAIAssistant</S>
+                <S>Enable-OAICodeInterpreter</S>
+                <S>Enable-OAIRetrievalTool</S>
+                <S>Export-OAIAssistant</S>
+                <S>Format-OAIFunctionCall</S>
+                <S>Get-FunctionDefinition</S>
+                <S>Get-OAIAssistant</S>
+                <S>Get-OAIAssistantItem</S>
+                <S>Get-OAIFile</S>
+                <S>Get-OAIFileContent</S>
+                <S>Get-OAIFileItem</S>
+                <S>Get-OAIMessage</S>
+                <S>Get-OAIRun</S>
+                <S>Get-OAIRunItem</S>
+                <S>Get-OAIRunStep</S>
+                <S>Get-OAIThread</S>
+                <S>Get-OAIThreadItem</S>
+                <S>Get-OpenAISpecDescriptions</S>
+                <S>Import-OAIAssistant</S>
+                <S>Invoke-OAIChat</S>
+                <S>Invoke-OAIUploadFile</S>
+                <S>New-OAIAssistant</S>
+                <S>New-OAIMessage</S>
+                <S>New-OAIRun</S>
+                <S>New-OAIThread</S>
+                <S>New-OAIThreadQuery</S>
+                <S>Out-OAIMessages</S>
+                <S>Remove-OAIAssistant</S>
+                <S>Remove-OAIFile</S>
+                <S>Remove-OAIThread</S>
+                <S>Show-OAIAPIReferenceWebPage</S>
+                <S>Show-OAIAssistantWebPage</S>
+                <S>Show-OAILocalPlayground</S>
+                <S>Show-OAIPlaygroundWebPage</S>
+                <S>Submit-OAIMessage</S>
+                <S>Submit-OAIToolOutputs</S>
+                <S>Test-JSONReplacement</S>
+                <S>Test-OAIAssistantId</S>
+                <S>Update-OAIAssistant</S>
+                <S>Wait-OAIOnRun</S>
+                <S>ConvertTo-OAIAssistant</S>
+                <S>Invoke-SimpleQuestion</S>
+                <S>Invoke-QuickChat</S>
+                <S>Enable-UnitTesting</S>
+                <S>Disable-UnitTesting</S>
+                <S>Get-UnitTestingStatus</S>
+                <S>Get-UnitTestingData</S>
+                <S>Get-AzOAISecrets</S>
+                <S>Set-AzOAISecrets</S>
+                <S>Set-OAIProvider</S>
+                <S>Get-OAIProvider</S>
+                <S>Reset-OAIProvider</S>
+                <S>Test-LLMModel</S>
+                <S>Get-OAIFunctionCallSpec</S>
+                <S>ConvertTo-ToolFormat</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">Workflow</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="7">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Add-OAIToolsToList</S>
+                <S>Get-MultiPartFormData</S>
+                <S>Invoke-OAIBeta</S>
+                <S>Clear-OAIAllItems</S>
+                <S>Clear-OAIAssistants</S>
+                <S>Clear-OAIFiles</S>
+                <S>ConvertFrom-FunctionDefinition</S>
+                <S>ConvertFrom-OAIAssistant</S>
+                <S>ConvertTo-OpenAIFunctionSpec</S>
+                <S>ConvertTo-OpenAIFunctionSpecDataType</S>
+                <S>Copy-OAIAssistant</S>
+                <S>Enable-OAICodeInterpreter</S>
+                <S>Enable-OAIRetrievalTool</S>
+                <S>Export-OAIAssistant</S>
+                <S>Format-OAIFunctionCall</S>
+                <S>Get-FunctionDefinition</S>
+                <S>Get-OAIAssistant</S>
+                <S>Get-OAIAssistantItem</S>
+                <S>Get-OAIFile</S>
+                <S>Get-OAIFileContent</S>
+                <S>Get-OAIFileItem</S>
+                <S>Get-OAIMessage</S>
+                <S>Get-OAIRun</S>
+                <S>Get-OAIRunItem</S>
+                <S>Get-OAIRunStep</S>
+                <S>Get-OAIThread</S>
+                <S>Get-OAIThreadItem</S>
+                <S>Get-OpenAISpecDescriptions</S>
+                <S>Import-OAIAssistant</S>
+                <S>Invoke-OAIChat</S>
+                <S>Invoke-OAIUploadFile</S>
+                <S>New-OAIAssistant</S>
+                <S>New-OAIMessage</S>
+                <S>New-OAIRun</S>
+                <S>New-OAIThread</S>
+                <S>New-OAIThreadQuery</S>
+                <S>Out-OAIMessages</S>
+                <S>Remove-OAIAssistant</S>
+                <S>Remove-OAIFile</S>
+                <S>Remove-OAIThread</S>
+                <S>Show-OAIAPIReferenceWebPage</S>
+                <S>Show-OAIAssistantWebPage</S>
+                <S>Show-OAILocalPlayground</S>
+                <S>Show-OAIPlaygroundWebPage</S>
+                <S>Submit-OAIMessage</S>
+                <S>Submit-OAIToolOutputs</S>
+                <S>Test-JSONReplacement</S>
+                <S>Test-OAIAssistantId</S>
+                <S>Update-OAIAssistant</S>
+                <S>Wait-OAIOnRun</S>
+                <S>ConvertTo-OAIAssistant</S>
+                <S>Invoke-SimpleQuestion</S>
+                <S>Invoke-QuickChat</S>
+                <S>Enable-UnitTesting</S>
+                <S>Disable-UnitTesting</S>
+                <S>Get-UnitTestingStatus</S>
+                <S>Get-UnitTestingData</S>
+                <S>Get-AzOAISecrets</S>
+                <S>Set-AzOAISecrets</S>
+                <S>Set-OAIProvider</S>
+                <S>Get-OAIProvider</S>
+                <S>Reset-OAIProvider</S>
+                <S>Test-LLMModel</S>
+                <S>Get-OAIFunctionCallSpec</S>
+                <S>ConvertTo-ToolFormat</S>
+              </LST>
+            </Obj>
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <Nil N="ReleaseNotes" />
+      <Obj N="Dependencies" RefId="8">
+        <TNRef RefId="2" />
+        <LST />
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="9">
+        <TN RefId="4">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">c 2024 All rights reserved.</S>
+          <S N="description">PowerShellAIAssistant integrates OpenAI's AI Assistants into PowerShell, leveraging advanced AI capabilities in your PowerShell scripts for dynamic, intelligent automation and data processing</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">True</S>
+          <S N="versionDownloadCount">11</S>
+          <S N="downloadCount">1981</S>
+          <S N="packageSize">194290</S>
+          <S N="published">19.3.2024. 12:22:55 +01:00</S>
+          <S N="created">19.3.2024. 12:22:55 +01:00</S>
+          <S N="lastUpdated">19.3.2024. 18:42:20 +01:00</S>
+          <S N="tags">PowerShell GPT OpenAI Assistant PSModule</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2024-03-19T18:42:20Z</S>
+          <S N="NormalizedVersion">0.2.1</S>
+          <S N="Authors">Douglas Finke</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">PowerShellAIAssistant.nuspec|changelog.md|Support.md|Private\Add-OAIToolsToList.ps1|Public\ConvertFrom-OAIAssistant.ps1|Public\Enable-OAIRetrievalTool.ps1|Public\Get-OAIFile.ps1|Public\Get-OAIRun.ps1|Public\Import-OAIAssistant.ps1|Public\New-OAIMessage.ps1|Public\Remove-OAIFile.ps1|Public\Show-OAIAssistantWebPage.ps1|Public\Test-LLMModel.ps1|createMarkdownHelp.ps1|.devcontainer\devcontainer.json|Private\Get-MultipartFormData.ps1|Public\ConvertTo-OAIAssistant.ps1|Public\Export-OAIAssistant.ps1|Public\Get-OAIFileContent.ps1|Public\Get-OAIRunItem.ps1|Public\Invoke-OAIChat.ps1|Public\New-OAIRun.ps1|Public\Remove-OAIThread.ps1|Public\Show-OAILocalPlayground.ps1|Public\Test-OAIAssistantId.ps1|LICENSE|examples\Assistants_API_overview.ipynb|Private\Invoke-OAIBeta.ps1|Public\ConvertTo-OpenAIFunctionSpec.ps1|Public\Format-OAIFunctionCall.ps1|Public\Get-OAIFileItem.ps1|Public\Get-OAIRunStep.ps1|Public\Invoke-OAIUploadFile.ps1|Public\New-OAIThread.ps1|Public\Reset-OAIProvider.ps1|Public\Show-OAIPlaygroundWebPage.ps1|Public\UnitTesting.ps1|mkdocs.yml|examples\Sanity-Check.ps1|Public\Clear-OAIAllItems.ps1|Public\ConvertTo-OpenAIFunctionSpecDataType.ps1|Public\Get-AzOAISecrets.ps1|Public\Get-OAIFunctionCallSpec.ps1|Public\Get-OAIThread.ps1|Public\Invoke-QuickChat.ps1|Public\New-OAIThreadQuery.ps1|Public\Set-AzOAISecrets.ps1|Public\Submit-OAIMessage.ps1|Public\Update-OAIAssistant.ps1|examples\Setup-Function-Call.ps1|Public\Clear-OAIAssistants.ps1|Public\ConvertTo-ToolFormat.ps1|Public\Get-FunctionDefinition.ps1|Public\Get-OAIMessage.ps1|Public\Get-OAIThreadItem.ps1|Public\Invoke-SimpleQuestion.ps1|Public\Out-OAIMessages.ps1|Public\Set-OAIProvider.ps1|Public\Submit-OAIToolOutputs.ps1|Public\Wait-OAIOnRun.ps1|PowerShellAIAssistant.psd1|examples\Simple-Tutor-Azure-OpenAI.ps1|Public\Clear-OAIFiles.ps1|Public\Copy-OAIAssistant.ps1|Public\Get-OAIAssistant.ps1|Public\Get-OAIProvider.ps1|Public\Get-OpenAISpecDescriptions.ps1|Public\New-OAIAssistant.ps1|Public\Remove-OAIAssistant.ps1|Public\Show-OAIAPIReferenceWebPage.ps1|Public\Test-JSONReplacement.ps1|examples\RAG-cli\Basic-RAG-Setup.ps1|PowerShellAIAssistant.psm1|examples\Simple-Tutor.ps1|Public\ConvertFrom-FunctionDefinition.ps1|Public\Enable-OAICodeInterpreter.ps1|Public\Get-OAIAssistantItem.ps1</S>
+          <S N="Functions">Add-OAIToolsToList Get-MultiPartFormData Invoke-OAIBeta Clear-OAIAllItems Clear-OAIAssistants Clear-OAIFiles ConvertFrom-FunctionDefinition ConvertFrom-OAIAssistant ConvertTo-OpenAIFunctionSpec ConvertTo-OpenAIFunctionSpecDataType Copy-OAIAssistant Enable-OAICodeInterpreter Enable-OAIRetrievalTool Export-OAIAssistant Format-OAIFunctionCall Get-FunctionDefinition Get-OAIAssistant Get-OAIAssistantItem Get-OAIFile Get-OAIFileContent Get-OAIFileItem Get-OAIMessage Get-OAIRun Get-OAIRunItem Get-OAIRunStep Get-OAIThread Get-OAIThreadItem Get-OpenAISpecDescriptions Import-OAIAssistant Invoke-OAIChat Invoke-OAIUploadFile New-OAIAssistant New-OAIMessage New-OAIRun New-OAIThread New-OAIThreadQuery Out-OAIMessages Remove-OAIAssistant Remove-OAIFile Remove-OAIThread Show-OAIAPIReferenceWebPage Show-OAIAssistantWebPage Show-OAILocalPlayground Show-OAIPlaygroundWebPage Submit-OAIMessage Submit-OAIToolOutputs Test-JSONReplacement Test-OAIAssistantId Update-OAIAssistant Wait-OAIOnRun ConvertTo-OAIAssistant Invoke-SimpleQuestion Invoke-QuickChat Enable-UnitTesting Disable-UnitTesting Get-UnitTestingStatus Get-UnitTestingData Get-AzOAISecrets Set-AzOAISecrets Set-OAIProvider Get-OAIProvider Reset-OAIProvider Test-LLMModel Get-OAIFunctionCallSpec ConvertTo-ToolFormat</S>
+          <S N="GUID">23da7dfe-f77e-4ca6-8b69-5e69603a73ca</S>
+          <S N="CompanyName">Doug Finke</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\Users\sesa719972\Documents\PowerShell\Modules\PowerShellAIAssistant\0.2.1</S>
+    </MS>
+  </Obj>
+</Objs>

@@ -1,0 +1,135 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">RemoteDesktopTools</S>
+      <Version N="Version">1.0.0.2</Version>
+      <S N="Type">Module</S>
+      <S N="Description">RemoteDesktopTools - RemoteDesktop module with several helper functions</S>
+      <S N="Author">Jaap Brasser</S>
+      <S N="CompanyName">JaapBrasser</S>
+      <S N="Copyright">(c) Jaap Brasser - All rights reserved</S>
+      <DT N="PublishedDate">2016-12-12T11:00:42+01:00</DT>
+      <Obj N="InstalledDate" RefId="1">
+        <DT>2024-03-20T16:58:06.2785201+01:00</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="2">
+            <TN RefId="1">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <Nil N="LicenseUri" />
+      <Nil N="ProjectUri" />
+      <Nil N="IconUri" />
+      <Obj N="Tags" RefId="3">
+        <TN RefId="2">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>PSModule</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="4">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Workflow</S>
+            <Obj N="Value" RefId="5">
+              <TNRef RefId="2" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Function</S>
+            <Obj N="Value" RefId="6">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Connect-Mstsc</S>
+                <S>Get-LAPSPassword</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="7">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Connect-Mstsc</S>
+                <S>Get-LAPSPassword</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Ref N="Value" RefId="5" />
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <Nil N="ReleaseNotes" />
+      <Obj N="Dependencies" RefId="8">
+        <TNRef RefId="2" />
+        <LST />
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="9">
+        <TN RefId="4">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">(c) Jaap Brasser - All rights reserved</S>
+          <S N="description">RemoteDesktopTools - RemoteDesktop module with several helper functions</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">True</S>
+          <S N="versionDownloadCount">1341</S>
+          <S N="downloadCount">1428</S>
+          <S N="packageSize">7202</S>
+          <S N="published">12.12.2016. 11:00:42 +01:00</S>
+          <S N="created">12.12.2016. 11:00:42 +01:00</S>
+          <S N="lastUpdated">12.3.2024. 22:44:17 +01:00</S>
+          <S N="tags">PSModule</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2024-03-12T22:44:17Z</S>
+          <S N="NormalizedVersion">1.0.0.2</S>
+          <S N="Authors">Jaap Brasser</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">RemoteDesktopTools.nuspec|RemoteDesktopTools.psd1|RemoteDesktopTools.psm1</S>
+          <S N="Functions">Connect-Mstsc Get-LAPSPassword</S>
+          <S N="GUID">0d520f56-96c1-4982-8067-9cbf0179a70e</S>
+          <S N="CompanyName">PowerShell Community</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\Users\sesa719972\Documents\PowerShell\Modules\RemoteDesktopTools\1.0.0.2</S>
+    </MS>
+  </Obj>
+</Objs>
