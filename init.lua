@@ -61,7 +61,7 @@ require("mason-null-ls").setup {
     "cmakelang",
     "cmake-language-server",
     "bash-language-server ",
-    "powershell-editor-services",
+    -- "powershell-editor-services",
     "shellcheck",
     "beautysh",
     "ansible-lint",
@@ -86,6 +86,7 @@ require "lspconfigs/clangd"
 -- require "lspconfigs/jedi"
 -- require "lspconfigs/pyright"
 -- require "lspconfigs/basedpyright"
+require "lspconfigs/pwsh_es"
 require "lspconfigs/pylsp"
 require "lspconfigs/typos-lsp"
 require("CopilotChat").setup {
