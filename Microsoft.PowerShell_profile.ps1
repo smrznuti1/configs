@@ -54,6 +54,7 @@ Set-Alias -Name ls -Value ListAll
 # New-PsDrives 2>&1 | Out-Null
 
 $oh_my_posh_theme="tokyo.omp.json"
-oh-my-posh --init --shell pwsh --config "C:\Users\sesa719972\AppData\Local\Programs\oh-my-posh\themes\$oh_my_posh_theme" | Invoke-Expression
+oh-my-posh --init --shell pwsh --config "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/tokyo.omp.json" | Invoke-Expression
+# oh-my-posh --init --shell pwsh --config "C:\Users\sesa719972\AppData\Local\Programs\oh-my-posh\themes\$oh_my_posh_theme" | Invoke-Expression
 Import-Module -Name Terminal-Icons 2>&1 | Out-Null
 Import-Module -Name PsDrives 2>&1 | Out-Null
