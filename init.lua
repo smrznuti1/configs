@@ -38,6 +38,7 @@ vim.api.nvim_create_user_command("BDAll", "%bd! | e#", {})
 vim.api.nvim_create_user_command("NT", "bd! % | term", {})
 vim.api.nvim_create_user_command("NUT", "bd! % | Uterm", {})
 vim.api.nvim_create_user_command("CC", "CopilotChat", {})
+vim.api.nvim_create_user_command("PDF", "!tectonic %", {})
 
 require("mason-null-ls").setup {
   ensure_installed = {
@@ -60,8 +61,7 @@ require("mason-null-ls").setup {
     "yamlfix",
     "cmakelang",
     "cmake-language-server",
-    "bash-language-server ",
-    -- "powershell-editor-services",
+    "bash-language-server ", -- "powershell-editor-services",
     "shellcheck",
     "beautysh",
     "ansible-lint",
@@ -73,9 +73,7 @@ require("mason-null-ls").setup {
 
 vim.opt.wrap = true
 
-require("notify").setup {
-  background_colour = "#000000",
-}
+require("notify").setup { background_colour = "#000000" }
 
 require("distant"):setup()
 
