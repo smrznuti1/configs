@@ -4,6 +4,23 @@
 #
 
 
+function Import-AllModules{
+  param(
+    [Parameter(Position = 0, ValueFromPipeline=$true)]
+    [string]$Module
+  )
+  process{
+    Import-Module -Name $Module 2>&1 | Out-Null
+    if (-not $?){
+      Install-Module -Name $Module -Force 2>&1 | Out-Null
+      Import-Module -Name $Module 2>&1 | Out-Null
+    }
+  }
+}
+function spwsh{
+  $allArgs = $args -join ' '
+  sudo pwsh -NoProfile -NonInteractive -NoLogo -Command $allArgs
+}
 function prompt {
     $path = Split-Path -Leaf (Get-Location)
     '{0}: ' -f $path
@@ -50,11 +67,8 @@ function ListAll{
   )
   Get-ChildItem $Path | Select-Object -Property Name, FullName
 }
-Set-Alias -Name ls -Value ListAll
-# New-PsDrives 2>&1 | Out-Null
 
 $oh_my_posh_theme="tokyo.omp.json"
 oh-my-posh --init --shell pwsh --config "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/tokyo.omp.json" | Invoke-Expression
-# oh-my-posh --init --shell pwsh --config "C:\Users\sesa719972\AppData\Local\Programs\oh-my-posh\themes\$oh_my_posh_theme" | Invoke-Expression
-Import-Module -Name Terminal-Icons 2>&1 | Out-Null
-Import-Module -Name PsDrives 2>&1 | Out-Null
+$modules = "Terminal-Icons", "PsDrives"
+$modules | Import-AllModules
