@@ -70,5 +70,5 @@ function ListAll{
 
 $oh_my_posh_theme="tokyo.omp.json"
 oh-my-posh --init --shell pwsh --config "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/tokyo.omp.json" | Invoke-Expression
-$modules = "Terminal-Icons", "PsDrives"
+$modules = "Terminal-Icons", "PsDrives", "PrettyLs"
 $modules | Import-AllModules
