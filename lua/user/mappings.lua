@@ -44,6 +44,10 @@ return {
     ["gv"] = { ":vs | lua vim.lsp.buf.definition()<cr>", desc = "Goto Definition split vertical" },
     ["gs"] = { ":sp | lua vim.lsp.buf.definition()<cr>", desc = "Goto Definition split horizontal" },
 
+    vim.api.nvim_set_keymap("n", "<C-->", ":DecreaseFont<CR>", { noremap = true, silent = true }),
+    vim.api.nvim_set_keymap("n", "<C-=>", ":IncreaseFont<CR>", { noremap = true, silent = true }),
+    vim.api.nvim_set_keymap("n", "<C-+>", ":IncreaseFont<CR>", { noremap = true, silent = true }),
+    vim.api.nvim_set_keymap("n", "<C-0>", ":ResetFontSize<CR>", { noremap = true, silent = true }),
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
