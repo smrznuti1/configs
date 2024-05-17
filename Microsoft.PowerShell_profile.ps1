@@ -70,17 +70,14 @@ function ListAll{
 
 $oh_my_posh_theme="tokyo.omp.json"
 oh-my-posh --init --shell pwsh --config "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/tokyo.omp.json" | Invoke-Expression
-$modules = "Terminal-Icons", "PsDrives", "PrettyLs"
+$modules = "Terminal-Icons", "PsDrives", "PrettyLs", "RepoManager"
 $modules | Import-AllModules
 Remove-Alias ls 2>&1 | Out-Null
-foreach ($drive in $drives){
-  New-PSDrive @drive | Out-Null
-}
 
-Register-ArgumentCompleter -CommandName Set-Location -ParameterName Path -ScriptBlock {
-    param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
-
-    Get-PSDrive | Where-Object { $_.Name -like "$wordToComplete*" } | ForEach-Object {
-        New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_.Name, $_.Name, 'ParameterValue', $_.Name
-    }
-}
+# Register-ArgumentCompleter -CommandName Set-Location -ParameterName Path -ScriptBlock {
+#     param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
+#
+#     Get-PSDrive | Where-Object { $_.Name -like "$wordToComplete*" } | ForEach-Object {
+#         New-Object -Type System.Management.Automation.CompletionResult -ArgumentList $_.Name, $_.Name, 'ParameterValue', $_.Name
+#     }
+# }
