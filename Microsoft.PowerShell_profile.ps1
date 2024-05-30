@@ -4,26 +4,31 @@
 #
 
 
-function Import-AllModules{
+function Import-AllModules
+{
   param(
     [Parameter(Position = 0, ValueFromPipeline=$true)]
     [string]$Module
   )
-  process{
+  process
+  {
     Import-Module -Name $Module 2>&1 | Out-Null
-    if (-not $?){
+    if (-not $?)
+    {
       Install-Module -Name $Module -Force 2>&1 | Out-Null
       Import-Module -Name $Module 2>&1 | Out-Null
     }
   }
 }
-function spwsh{
+function spwsh
+{
   $allArgs = $args -join ' '
   sudo pwsh -NoProfile -NonInteractive -NoLogo -Command $allArgs
 }
-function prompt {
-    $path = Split-Path -Leaf (Get-Location)
-    '{0}: ' -f $path
+function prompt
+{
+  $path = Split-Path -Leaf (Get-Location)
+  '{0}: ' -f $path
 }
 function gfci
 {
@@ -59,7 +64,8 @@ Set-PSReadlineOption -Colors @{
   Variable = [System.ConsoleColor]::Cyan
 }
 Set-PSReadLineOption -EditMode "Vi"
-function ListAll{
+function ListAll
+{
   [CmdletBinding()]
   param(
     [Parameter(Position = 0, Mandatory = $false)]
@@ -69,9 +75,10 @@ function ListAll{
 }
 
 # $oh_my_posh_theme="tokyo.omp.json"
-$oh_my_posh_theme="tokyonight_storm.omp.json"
+$oh_my_posh_theme="easy-term.omp.json"
 
 oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH\$oh_my_posh_theme | Invoke-Expression
+# oh-my-posh --init --shell pwsh | Invoke-Expression
 $modules = "Terminal-Icons", "PsDrives", "RepoManager"
 $modules | Import-AllModules
 Remove-Alias ls 2>&1 | Out-Null
