@@ -72,7 +72,7 @@ function ListAll{
 $oh_my_posh_theme="tokyonight_storm.omp.json"
 
 oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH\$oh_my_posh_theme | Invoke-Expression
-$modules = "Terminal-Icons", "PsDrives", "PrettyLs", "RepoManager"
+$modules = "Terminal-Icons", "PsDrives", "RepoManager"
 $modules | Import-AllModules
 Remove-Alias ls 2>&1 | Out-Null
 
