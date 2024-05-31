@@ -76,8 +76,13 @@ function ListAll
 
 # $oh_my_posh_theme="tokyo.omp.json"
 $oh_my_posh_theme="easy-term.omp.json"
+$posh_path = (Join-Path (Split-Path $PROFILE) "profile.omp.json")
 
-oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH\$oh_my_posh_theme | Invoke-Expression
+if (-not (Test-Path $posh_path)){
+  Invoke-WebRequest -Uri "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/master/themes/tokyonight_storm.omp.json" -OutFile $posh_path
+}
+
+oh-my-posh --init --shell pwsh --config $posh_path | Invoke-Expression
 # oh-my-posh --init --shell pwsh | Invoke-Expression
 $modules = "Terminal-Icons", "PsDrives", "RepoManager"
 $modules | Import-AllModules
