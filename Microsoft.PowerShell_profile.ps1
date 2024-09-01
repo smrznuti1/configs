@@ -91,4 +91,4 @@ oh-my-posh --init --shell pwsh --config $profile_path\$oh_my_posh_theme | Invoke
 $modules = "Terminal-Icons", "PsDrives", "RepoManager"
 $modules | Import-AllModules
 Remove-Alias ls 2>&1 | Out-Null
-
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
