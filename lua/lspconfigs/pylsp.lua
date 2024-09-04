@@ -1,5 +1,6 @@
 local lspconfig = require "lspconfig"
 local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+local custom_attach = require("astronvim.utils.lsp").on_attach
 lspconfig.pylsp.setup {
   on_attach = custom_attach,
   settings = {
