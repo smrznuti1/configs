@@ -81,14 +81,18 @@ $profile_path = (Split-Path -Parent $PROFILE)
 # $oh_my_posh_theme="tokyo.omp.json"
 $oh_my_posh_theme="tokyonight_storm.omp.json"
 
-if (-not (Test-Path $profile_path\$oh_my_posh_theme)){
+if (-not (Test-Path $profile_path\$oh_my_posh_theme))
+{
   Invoke-RestMethod -Uri $git_location\$oh_my_posh_theme -OutFile $profile_path\$oh_my_posh_theme
 }
 
 oh-my-posh --init --shell pwsh --config $profile_path\$oh_my_posh_theme | Invoke-Expression
 # oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH\$oh_my_posh_theme | Invoke-Expression
 # oh-my-posh --init --shell pwsh | Invoke-Expression
-$modules = "Terminal-Icons", "PsDrives", "RepoManager"
-$modules | Import-AllModules
+$modules = "Terminal-Icons"
+Import-Module Terminal-Icons
+#$modules | Import-Module
 Remove-Alias ls 2>&1 | Out-Null
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
+fastfetch
