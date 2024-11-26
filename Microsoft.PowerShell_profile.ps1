@@ -28,7 +28,7 @@ function spwsh
 function prompt
 {
   #$path = Split-Path -Leaf (Get-Location)
-  $path = ((Get-Location) -split '\\')
+  $path = ((Get-Location) -split '/')
   $prefix = ""
   if ($path.Length -ge 3)
   {
@@ -40,8 +40,19 @@ function prompt
 
   $gitbranch = (git branch --show-current)
   $ESC = [char]27
-  '{0}[93m{1} {2}[93m({3}[92m{4}{5}[93m){6}[93m> ' -f $ESC, $path, $ESC, $ESC, $gitbranch, $ESC, $ESC
+  if ($gitbranch -and (git status | grep -E "(Untracked|Changes not staged for commit)"))
+  {
+    $gitcolor = '{0}[91m' -f $ESC
+  } elseif ($gitbranch -and (git status | grep -E "Changes to be committed:"))
+  {
+    $gitcolor = '{0}[93m' -f $ESC
+  } else
+  {
+    $gitcolor = '{0}[92m' -f $ESC
+  }
+  '{0}[94m{1} {2}[94m({3}{4}{5}[94m){6}[94m> ' -f $ESC, $path, $ESC, $gitcolor, $gitbranch, $ESC, $ESC
 }
+
 
 function gfci
 {
