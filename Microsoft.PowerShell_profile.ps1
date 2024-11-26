@@ -27,9 +27,22 @@ function spwsh
 }
 function prompt
 {
-  $path = Split-Path -Leaf (Get-Location)
-  '{0}: ' -f $path
+  #$path = Split-Path -Leaf (Get-Location)
+  $path = ((Get-Location) -split '\\')
+  $prefix = ""
+  if ($path.Length -ge 3)
+  {
+    $path = $path[($path.Length - 2) .. $path.Length]
+    $prefix = '.../'
+  }
+
+  $path = $prefix + ($path -join '/')
+
+  $gitbranch = (git branch --show-current)
+  $ESC = [char]27
+  '{0}[93m{1} {2}[93m({3}[92m{4}{5}[93m){6}[93m> ' -f $ESC, $path, $ESC, $ESC, $gitbranch, $ESC, $ESC
 }
+
 function gfci
 {
   [CmdletBinding()]
