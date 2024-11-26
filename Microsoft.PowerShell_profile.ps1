@@ -44,10 +44,10 @@ function prompt
   $gitstatus = (git status --porcelain)
 
   $ESC = [char]27
-  if ($gitbranch -and ($gitstatus -match "^(M|A|D|R|C) "))
+  if ($gitbranch -and ($gitstatus -match "(M|A|D|R|C) "))
   {
     $gitcolor = '{0}[93m' -f $ESC
-  } elseif ($gitbranch -and ($gitstatus -match "^\?\? "))
+  } elseif ($gitbranch -and ($gitstatus -match "\?\? "))
   {
     $gitcolor = '{0}[91m' -f $ESC
   } else
