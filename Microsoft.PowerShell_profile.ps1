@@ -27,32 +27,43 @@ function spwsh
 }
 function prompt
 {
-  #$path = Split-Path -Leaf (Get-Location)
-  $path = ((Get-Location) -split '/')
+  $path = (Get-Location).Path -replace '\\', '/'
+  $pathSegments = $path -split '/'
   $prefix = ""
-  if ($path.Length -ge 3)
+
+  if ($pathSegments.Length -ge 3)
   {
-    $path = $path[($path.Length - 2) .. $path.Length]
+    $pathSegments = $pathSegments[($pathSegments.Length - 2) .. ($pathSegments.Length - 1)]
     $prefix = '.../'
   }
 
-  $path = $prefix + ($path -join '/')
+  $path = $prefix + ($pathSegments -join '/')
 
-  $gitbranch = (git branch --show-current)
+  $gitbranch = (git branch --show-current) -replace '\s', ''
+  $gitstatus = (git status --porcelain)
+
   $ESC = [char]27
-  if ($gitbranch -and (git status | grep -E "(Untracked|Changes not staged for commit)"))
+  if ($gitbranch -and ($gitstatus -match "^\?\? |^ M "))
   {
     $gitcolor = '{0}[91m' -f $ESC
-  } elseif ($gitbranch -and (git status | grep -E "Changes to be committed:"))
+  } elseif ($gitbranch -and ($gitstatus -match "^M "))
   {
     $gitcolor = '{0}[93m' -f $ESC
   } else
   {
     $gitcolor = '{0}[92m' -f $ESC
   }
-  '{0}[94m{1} {2}[94m({3}{4}{5}[94m){6}[94m> ' -f $ESC, $path, $ESC, $gitcolor, $gitbranch, $ESC, $ESC
-}
 
+  $gitbranchView = if ($gitbranch)
+  {
+    ' {0}[94m({1}{2}{3}[94m)' -f $ESC, $gitcolor, $gitbranch, $ESC
+  } else
+  {
+    ''
+  }
+
+  '{0}[94m{1}{2}{3}[94m> ' -f $ESC, $path, $gitbranchView, $ESC
+}
 
 function gfci
 {
