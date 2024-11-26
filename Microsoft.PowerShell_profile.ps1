@@ -1,29 +1,9 @@
-# if ([string]::IsNullOrEmpty($env:NVIM)){
-#   nvim -c ":term"
-# }
-#
-
-
-function Import-AllModules
+$env:DISPLAY = ":1.0"
+$env:LIBGL_ALWAYS_INDIRECT = "0"
+$env:PULSE_SERVER="tcp:$(ip route | grep default | awk '{print $3}')"
+if ([string]::IsNullOrEmpty($env:NVIM))
 {
-  param(
-    [Parameter(Position = 0, ValueFromPipeline=$true)]
-    [string]$Module
-  )
-  process
-  {
-    Import-Module -Name $Module 2>&1 | Out-Null
-    if (-not $?)
-    {
-      Install-Module -Name $Module -Force 2>&1 | Out-Null
-      Import-Module -Name $Module 2>&1 | Out-Null
-    }
-  }
-}
-function spwsh
-{
-  $allArgs = $args -join ' '
-  sudo pwsh -NoProfile -NonInteractive -NoLogo -Command $allArgs
+  exit;
 }
 
 function prompt
@@ -66,16 +46,6 @@ function prompt
   '{0}[32m-> {1}[94m{2}{3}{4}[94m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
 }
 
-function gfci
-{
-  [CmdletBinding()]
-  param(
-    [Parameter(Position = 0)]
-    [string]$path = "."
-  )
-  Get-ChildItem -Force $path | ForEach-Object { $_.FullName }
-}
-
 function pwc
 {
   $path = (Get-Location).ProviderPath
@@ -100,35 +70,26 @@ Set-PSReadlineOption -Colors @{
   Variable = [System.ConsoleColor]::Cyan
 }
 Set-PSReadLineOption -EditMode "Vi"
-function ListAll
-{
-  [CmdletBinding()]
-  param(
-    [Parameter(Position = 0, Mandatory = $false)]
-    [string]$Path = "."
-  )
-  Get-ChildItem $Path | Select-Object -Property Name, FullName
-}
 
-$git_location = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes"
-$profile_path = (Split-Path -Parent $PROFILE)
+#$git_location = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes"
+#$profile_path = (Split-Path -Parent $PROFILE)
 
 # $oh_my_posh_theme="easy-term.omp.json"
 # $oh_my_posh_theme="tokyo.omp.json"
-$oh_my_posh_theme="tokyonight_storm.omp.json"
+#$oh_my_posh_theme="tokyonight_storm.omp.json"
 
-if (-not (Test-Path $profile_path\$oh_my_posh_theme))
-{
-  Invoke-RestMethod -Uri $git_location\$oh_my_posh_theme -OutFile $profile_path\$oh_my_posh_theme
-}
+#if (-not (Test-Path $profile_path\$oh_my_posh_theme))
+#{
+#  Invoke-RestMethod -Uri $git_location\$oh_my_posh_theme -OutFile $profile_path\$oh_my_posh_theme
+#}
 
-oh-my-posh --init --shell pwsh --config $profile_path\$oh_my_posh_theme | Invoke-Expression
+#oh-my-posh --init --shell pwsh --config $profile_path\$oh_my_posh_theme | Invoke-Expression
 # oh-my-posh --init --shell pwsh --config $env:POSH_THEMES_PATH\$oh_my_posh_theme | Invoke-Expression
 # oh-my-posh --init --shell pwsh | Invoke-Expression
-$modules = "Terminal-Icons"
+#$modules = "Terminal-Icons"
 Import-Module Terminal-Icons
 #$modules | Import-Module
 Remove-Alias ls 2>&1 | Out-Null
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
-fastfetch
+#
+#fastfetch
