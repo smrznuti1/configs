@@ -25,13 +25,14 @@ function spwsh
   $allArgs = $args -join ' '
   sudo pwsh -NoProfile -NonInteractive -NoLogo -Command $allArgs
 }
+
 function prompt
 {
   $path = (Get-Location).Path -replace '\\', '/'
   $pathSegments = $path -split '/'
   $prefix = ""
 
-  if ($pathSegments.Length -ge 3)
+  if ($pathSegments.Length -gt 3)
   {
     $pathSegments = $pathSegments[($pathSegments.Length - 2) .. ($pathSegments.Length - 1)]
     $prefix = '.../'
@@ -43,12 +44,12 @@ function prompt
   $gitstatus = (git status --porcelain)
 
   $ESC = [char]27
-  if ($gitbranch -and ($gitstatus -match "^\?\? |^ M "))
-  {
-    $gitcolor = '{0}[91m' -f $ESC
-  } elseif ($gitbranch -and ($gitstatus -match "^M "))
+  if ($gitbranch -and ($gitstatus -match "^(M|A|D|R|C) "))
   {
     $gitcolor = '{0}[93m' -f $ESC
+  } elseif ($gitbranch -and ($gitstatus -match "^\?\? "))
+  {
+    $gitcolor = '{0}[91m' -f $ESC
   } else
   {
     $gitcolor = '{0}[92m' -f $ESC
@@ -62,7 +63,7 @@ function prompt
     ''
   }
 
-  '{0}[94m{1}{2}{3}[94m> ' -f $ESC, $path, $gitbranchView, $ESC
+  '{0}[32m-> {1}[94m{2}{3}{4}[94m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
 }
 
 function gfci
