@@ -1,6 +1,3 @@
-$env:DISPLAY = ":1.0"
-$env:LIBGL_ALWAYS_INDIRECT = "0"
-$env:PULSE_SERVER="tcp:$(ip route | grep default | awk '{print $3}')"
 if ([string]::IsNullOrEmpty($env:NVIM))
 {
   exit;
@@ -21,18 +18,12 @@ function prompt
   $path = $prefix + ($pathSegments -join '/')
 
   $gitbranch = (git symbolic-ref --short HEAD 2>$null) -replace '\s', ''
-  #$gitstatus = (git status --porcelain 2>$null)
-  $gitstatus = $null
 
   $ESC = [char]27
-
   $gitbranchView = if ($gitbranch)
   {
-
-    if (-not $gitstatus)
-    {
-      $gitcolor = '{0}[37m' -f $ESC
-    } elseif ($gitbranch -and ($gitstatus -match "(M|A|D|R|C) "))
+    $gitstatus = (git status --porcelain 2>$null)
+    if ($gitbranch -and ($gitstatus -match "(M|A|D|R|C) "))
     {
       $gitcolor = '{0}[93m' -f $ESC
     } elseif ($gitbranch -and ($gitstatus -match "\?\? "))
