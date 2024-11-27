@@ -20,31 +20,36 @@ function prompt
 
   $path = $prefix + ($pathSegments -join '/')
 
-  $gitbranch = (git branch --show-current) -replace '\s', ''
-  $gitstatus = (git status --porcelain)
+  $gitbranch = (git symbolic-ref --short HEAD 2>$null) -replace '\s', ''
+  #$gitstatus = (git status --porcelain 2>$null)
+  $gitstatus = $null
 
   $ESC = [char]27
-  if ($gitbranch -and ($gitstatus -match "(M|A|D|R|C) "))
-  {
-    $gitcolor = '{0}[93m' -f $ESC
-  } elseif ($gitbranch -and ($gitstatus -match "\?\? "))
-  {
-    $gitcolor = '{0}[91m' -f $ESC
-  } else
-  {
-    $gitcolor = '{0}[92m' -f $ESC
-  }
 
   $gitbranchView = if ($gitbranch)
   {
+
+    if (-not $gitstatus)
+    {
+      $gitcolor = '{0}[37m' -f $ESC
+    } elseif ($gitbranch -and ($gitstatus -match "(M|A|D|R|C) "))
+    {
+      $gitcolor = '{0}[93m' -f $ESC
+    } elseif ($gitbranch -and ($gitstatus -match "\?\? "))
+    {
+      $gitcolor = '{0}[91m' -f $ESC
+    } else
+    {
+      $gitcolor = '{0}[92m' -f $ESC
+    }
     ' {0}[94m({1}{2}{3}[94m)' -f $ESC, $gitcolor, $gitbranch, $ESC
   } else
   {
     ''
   }
-
   '{0}[32m-> {1}[94m{2}{3}{4}[94m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
 }
+
 
 function pwc
 {
