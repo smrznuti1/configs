@@ -22,11 +22,12 @@ function prompt
   $ESC = [char]27
   $gitbranchView = if ($gitbranch)
   {
+
     $gitstatus = (git status --porcelain 2>$null)
-    if ($gitbranch -and ($gitstatus -match "(M|A|D|R|C) "))
+    if ($gitbranch -and ($gitstatus -match "^(M|A|D|R|C) "))
     {
       $gitcolor = '{0}[93m' -f $ESC
-    } elseif ($gitbranch -and ($gitstatus -match "\?\? "))
+    } elseif ($gitbranch -and ($gitstatus -match "."))
     {
       $gitcolor = '{0}[91m' -f $ESC
     } else
