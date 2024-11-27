@@ -26,20 +26,20 @@ function prompt
     $gitstatus = (git status --porcelain 2>$null)
     if ($gitbranch -and ($gitstatus -match "^(M|A|D|R|C) "))
     {
-      $gitcolor = '{0}[93m' -f $ESC
+      $gitcolor = '{0}[33m' -f $ESC
     } elseif ($gitbranch -and ($gitstatus -match "."))
     {
-      $gitcolor = '{0}[91m' -f $ESC
+      $gitcolor = '{0}[31m' -f $ESC
     } else
     {
-      $gitcolor = '{0}[92m' -f $ESC
+      $gitcolor = '{0}[32m' -f $ESC
     }
-    ' {0}[94m({1}{2}{3}[94m)' -f $ESC, $gitcolor, $gitbranch, $ESC
+    ' {0}[34m({1}{2}{3}[34m)' -f $ESC, $gitcolor, $gitbranch, $ESC
   } else
   {
     ''
   }
-  '{0}[32m-> {1}[94m{2}{3}{4}[94m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
+  '{0}[32m-> {1}[34m{2}{3}{4}[34m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
 }
 
 
@@ -52,19 +52,19 @@ function pwc
 
 
 Set-PSReadlineOption -Colors @{
-  Command = [System.ConsoleColor]::Green
+  Command = [System.ConsoleColor]::DarkGreen
   Comment = [System.ConsoleColor]::DarkGreen
-  ContinuationPrompt = [System.ConsoleColor]::Yellow
-  Default = [ConsoleColor]::Yellow
-  Emphasis = [System.ConsoleColor]::Cyan
-  Error = [System.ConsoleColor]::Red
+  ContinuationPrompt = [System.ConsoleColor]::DarkYellow
+  Default = [ConsoleColor]::DarkYellow
+  Emphasis = [System.ConsoleColor]::DarkCyan
+  Error = [System.ConsoleColor]::DarkRed
   InlinePrediction = [System.ConsoleColor]::White
-  Keyword = [System.ConsoleColor]::Cyan
-  Member = [System.ConsoleColor]::Yellow
-  Operator = [System.ConsoleColor]::Yellow
-  Parameter = [System.ConsoleColor]::Magenta
-  Type = [System.ConsoleColor]::Yellow
-  Variable = [System.ConsoleColor]::Cyan
+  Keyword = [System.ConsoleColor]::DarkCyan
+  Member = [System.ConsoleColor]::DarkYellow
+  Operator = [System.ConsoleColor]::DarkYellow
+  Parameter = [System.ConsoleColor]::DarkMagenta
+  Type = [System.ConsoleColor]::DarkYellow
+  Variable = [System.ConsoleColor]::DarkCyan
 }
 Set-PSReadLineOption -EditMode "Vi"
 
