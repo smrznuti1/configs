@@ -1,3 +1,4 @@
+. ./EnvModules/*
 if ([string]::IsNullOrEmpty($env:NVIM))
 {
   exit;
