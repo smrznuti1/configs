@@ -39,7 +39,7 @@ function prompt
   {
     ''
   }
-  '{0}[32m-> {1}[34m{2}{3}{4}[34m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
+  '{0}[32m➜ {1}[34m{2}{3}{4}[34m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
 }
 
 
