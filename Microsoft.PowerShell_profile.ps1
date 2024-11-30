@@ -1,4 +1,7 @@
-. ./EnvModules/*
+if (Test-Path ./env.ps1)
+{
+  . ./env.ps1
+}
 if ([string]::IsNullOrEmpty($env:NVIM))
 {
   exit;
