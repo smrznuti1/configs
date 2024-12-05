@@ -1,9 +1,10 @@
+$prorfilePath = [System.IO.Path]::GetDirectoryName($PROFILE.CurrentUserCurrentHost)
 try
 {
-  ./env.ps1
+  & "$prorfilePath/env.ps1"
 } catch
 {
-  New-Item -Type File "$PWD/env.ps1"
+  New-Item -Type File "$prorfilePath/env.ps1"
 }
 
 if ([string]::IsNullOrEmpty($env:NVIM))
