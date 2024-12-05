@@ -65,7 +65,6 @@ $PSStyle.FileInfo.Extension['.ps1'] = '{0}[34m' -f $ESC
 $PSStyle.FileInfo.Extension['.psd1'] = '{0}[34m' -f $ESC
 $PSStyle.FileInfo.Extension['.psm1'] = '{0}[34m' -f $ESC
 $PSStyle.FileInfo.Extension['.ps1'] = '{0}[34m' -f $ESC
-$PSStyle.FileInfo.Extension.Keys
 
 
 $PSStyle.FileInfo.Extension['.xml'] = '{0}[31m' -f $ESC
