@@ -1,6 +1,6 @@
 if (Test-Path ./env.ps1)
 {
-  . ./env.ps1
+  ./env.ps1
 }
 if ([string]::IsNullOrEmpty($env:NVIM))
 {
@@ -75,3 +75,4 @@ Set-PSReadLineOption -EditMode "Vi"
 Import-Module Terminal-Icons
 Remove-Alias ls 2>&1 | Out-Null
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+catlogin
