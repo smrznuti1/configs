@@ -95,4 +95,3 @@ Set-PSReadLineOption -EditMode "Vi"
 
 #Import-Module Terminal-Icons
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-catlogin
