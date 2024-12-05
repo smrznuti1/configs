@@ -1,7 +1,11 @@
-if (Test-Path ./env.ps1)
+try
 {
   ./env.ps1
+} catch
+{
+  New-Item -Type File "$PWD/env.ps1"
 }
+
 if ([string]::IsNullOrEmpty($env:NVIM))
 {
   exit;
@@ -73,6 +77,5 @@ Set-PSReadlineOption -Colors @{
 Set-PSReadLineOption -EditMode "Vi"
 
 Import-Module Terminal-Icons
-Remove-Alias ls 2>&1 | Out-Null
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 catlogin
