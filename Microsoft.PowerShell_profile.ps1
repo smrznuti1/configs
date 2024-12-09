@@ -59,7 +59,7 @@ function pwc
 }
 
 
-$PSStyle.FileInfo.Directory = '{0}[33m' -f $ESC
+$PSStyle.FileInfo.Directory = '{0}[33;40m' -f $ESC
 $PSStyle.FileInfo.Executable = '{0}[32m' -f $ESC
 $PSStyle.FileInfo.Extension['.ps1'] = '{0}[34m' -f $ESC
 $PSStyle.FileInfo.Extension['.psd1'] = '{0}[34m' -f $ESC
