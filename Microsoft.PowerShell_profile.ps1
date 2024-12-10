@@ -59,6 +59,11 @@ function pwc
 }
 
 
+foreach ($item in $PSStyle.FileInfo.Extension.Keys)
+{
+  $PSStyle.FileInfo.Extension[$item] = '{0}[37m' -f $ESC
+}
+
 $PSStyle.FileInfo.Directory = '{0}[33;40m' -f $ESC
 $PSStyle.FileInfo.Executable = '{0}[32m' -f $ESC
 $PSStyle.FileInfo.Extension['.ps1'] = '{0}[34m' -f $ESC
