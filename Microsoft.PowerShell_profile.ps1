@@ -43,12 +43,12 @@ function prompt
     {
       $gitcolor = '{0}[32m' -f $ESC
     }
-    ' {0}[34m({1}{2}{3}[34m)' -f $ESC, $gitcolor, $gitbranch, $ESC
+    ' {0}[36m({1}{2}{3}[36m)' -f $ESC, $gitcolor, $gitbranch, $ESC
   } else
   {
     ''
   }
-  '{0}[32m➜ {1}[34m{2}{3}{4}[34m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
+  '{0}[32m➜ {1}[36m{2}{3}{4}[36m{5}[32m>{6}[37m ' -f $ESC, $ESC, $path, $gitbranchView, $ESC, $ESC, $ESC
 }
 
 
