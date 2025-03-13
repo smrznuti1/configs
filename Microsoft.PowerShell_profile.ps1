@@ -1,7 +1,7 @@
 $prorfilePath = [System.IO.Path]::GetDirectoryName($PROFILE.CurrentUserCurrentHost)
 try
 {
-  #& "$prorfilePath/env.ps1"
+  & "$prorfilePath/env.ps1"
   . "$prorfilePath/env.ps1"
 } catch
 {
