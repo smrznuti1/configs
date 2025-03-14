@@ -53,11 +53,11 @@ function prompt
 }
 
 
-function pwc
-{
-  $path = (Get-Location).ProviderPath
-  Set-Clipboard $path
-}
+#function pwc
+#{
+#  $path = (Get-Location).ProviderPath
+#  Set-Clipboard $path
+#}
 
 
 foreach ($item in $PSStyle.FileInfo.Extension.Keys)
