@@ -101,3 +101,4 @@ Set-PSReadLineOption -EditMode "Vi"
 
 #Import-Module Terminal-Icons
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+New-Alias -Name 'll' -Value 'Get-ChildItem'
