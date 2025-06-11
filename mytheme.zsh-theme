@@ -34,7 +34,16 @@ function _prompt_path() {
     echo "${prefix}${result}"
 }
 
-PROMPT='%{$fg[green]%}➜ %{$fg_bold[blue]%}$(_prompt_path)$(_git_prompt)%{$fg[green]%}>%{$reset_color%} '
+
+function _dashes(){
+    NEWCOLUMNS=$(($COLUMNS-4))
+    printf '  '
+    printf '-%0.s' {1..$NEWCOLUMNS}
+    printf '  '
+}
+
+PROMPT='%{$fg[237]%}$(_dashes)
+%{$fg[green]%}➜ %{$fg_bold[blue]%}$(_prompt_path)$(_git_prompt)%{$fg[green]%}>%{$reset_color%} '
 
 # ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}‹"
 # ZSH_THEME_GIT_PROMPT_SUFFIX="›%{$reset_color%}"
