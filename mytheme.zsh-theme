@@ -42,8 +42,10 @@ function _dashes(){
     printf '  '
 }
 
-PROMPT='${FG[243]}$(_dashes)
-%{$fg[green]%}➜ %{$fg_bold[blue]%}$(_prompt_path)$(_git_prompt)%{$fg[green]%}>%{$reset_color%} '
+# PS1='${FG[243]}$(_dashes)
+# %{$fg[green]%}➜ %{$fg_bold[blue]%}$(_prompt_path)$(_git_prompt)%{$fg[green]%}>%{$reset_color%} '
+
+PROMPT='%{$fg[green]%}➜ %{$fg_bold[blue]%}$(_prompt_path)$(_git_prompt)%{$fg[green]%}>%{$reset_color%} '
 
 # ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}‹"
 # ZSH_THEME_GIT_PROMPT_SUFFIX="›%{$reset_color%}"
